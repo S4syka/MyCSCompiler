@@ -2,7 +2,7 @@
 
 public enum Operation
 {
-    Add,
+    Plus,
     Minus,
     Times,
     Div

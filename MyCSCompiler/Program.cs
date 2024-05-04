@@ -1,10 +1,16 @@
-﻿namespace MyCSCompiler
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+﻿using StraightLineLanguage.Extensions;
+using StraightLineLanguage.LanguageTree;
+using StraightLineLanguage.LanguageTree.Enums;
+
+Stm prog = new CompoundStm(
+       new AssignStm("a", new OpExp(new NumExp(5), Operation.Plus, new NumExp(3))),
+          new CompoundStm(
+                     new AssignStm("b", new EseqExp(
+                                    new PrintStm(new PairExpList(new IdExp("a"), new LastExpList(new OpExp(new IdExp("a"), Operation.Minus, new NumExp(1))))),
+                                               new OpExp(new NumExp(10), Operation.Times, new IdExp("a"))
+                                                      )),
+                            new PrintStm(new LastExpList(new IdExp("b")))
+                               )
+          );
+
+Console.WriteLine(prog.MaxArgs());

@@ -1,5 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public record class Exp
+public record Exp : Token
 {
 }

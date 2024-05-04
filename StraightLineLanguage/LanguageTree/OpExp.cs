@@ -2,6 +2,6 @@
 
 namespace StraightLineLanguage.LanguageTree;
 
-internal record OpExp (Exp Left, Operation Operation, Exp Right) : Exp
+public record OpExp (Exp Left, Operation Operation, Exp Right) : Exp
 {
 }

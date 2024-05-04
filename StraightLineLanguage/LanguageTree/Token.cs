@@ -1,5 +1,3 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public abstract record Stm : Token
-{
-}
+public record Token();
