@@ -2,9 +2,6 @@
 
 namespace StraightLineLanguage.LanguageTree;
 
-internal class OpExp (Exp left, Operation operation, Exp right)
+internal record OpExp (Exp Left, Operation Operation, Exp Right) : Exp
 {
-    public Exp Left { get; set; } = left;
-    public Exp Right { get; set; } = right;
-    public Operation Operation { get; set; } = operation;
 }

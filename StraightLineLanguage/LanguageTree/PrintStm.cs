@@ -1,6 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-internal class PrintStm(ExpList exps) : Stm
+internal record PrintStm(ExpList ExpList) : Stm
 {
-    public ExpList Exps { get; set; } = exps;
 }

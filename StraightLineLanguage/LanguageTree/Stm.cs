@@ -1,5 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public abstract class Stm
+public abstract record Stm
 {
 }

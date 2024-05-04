@@ -1,7 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public class PairExpList(Exp head, PairExpList tail) : ExpList
+public record PairExpList(Exp Head, PairExpList Tail) : ExpList
 {
-    public Exp Head { get; set; } = head;
-    public PairExpList Tail { get; set; } = tail;
 }

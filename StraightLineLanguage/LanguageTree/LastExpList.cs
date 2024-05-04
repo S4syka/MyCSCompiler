@@ -1,6 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public class LastExpList(Exp head) : ExpList
+public record LastExpList(Exp Head) : ExpList
 {
-    public Exp Head { get; set; } = head;
 }

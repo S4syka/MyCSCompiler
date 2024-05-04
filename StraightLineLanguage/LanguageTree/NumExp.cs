@@ -1,6 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public class NumExp (int num)
+public record NumExp (int Num) : Exp
 {
-    public int Num { get; set; } = num;
 }

@@ -1,6 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-internal class IdExp(string id)
+internal record IdExp(string Id) : Exp
 {
-    public string Id { get; set; } = id;
 }

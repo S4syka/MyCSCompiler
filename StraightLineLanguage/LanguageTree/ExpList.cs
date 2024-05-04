@@ -1,5 +1,5 @@
 ﻿namespace StraightLineLanguage.LanguageTree;
 
-public class ExpList
+public record ExpList
 {
 }
