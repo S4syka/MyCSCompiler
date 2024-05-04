@@ -9,7 +9,7 @@ public static class LanguageExtension
     {
         CompoundStm cStm => Math.Max(cStm.Stm1.MaxArgs(), cStm.Stm2.MaxArgs()),
         AssignStm aStm => aStm.Exp.MaxArgs(),
-        PrintStm pStm => pStm.ExpList.Length(),
+        PrintStm pStm => pStm.ExpList.MaxArgs(),
         _ => 0
     };
 
@@ -22,10 +22,10 @@ public static class LanguageExtension
         _ => 0
     };
 
-    public static int Length(this ExpList expList) => expList switch
+    public static int MaxArgs(this ExpList expList) => expList switch
     {
-        PairExpList pair => 1 + pair.Tail.Length(),
-        LastExpList => 1,
+        PairExpList pair => Math.Max(1, pair.Head.MaxArgs()) + pair.Tail.MaxArgs(),
+        LastExpList last => Math.Max(1, last.Head.MaxArgs()),
         _ => 0
     };
 }
