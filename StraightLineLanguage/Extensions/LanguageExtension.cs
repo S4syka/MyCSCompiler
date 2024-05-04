@@ -42,16 +42,6 @@ public static class LanguageExtension
             Operation.Div => (oExp.Left.Evaluate(table).Val / oExp.Right.Evaluate(table).Val, table),
             _ => (0, table)
         },
-        EseqExp eExp => eExp.Exp.Evaluate(Append(eExp.Stm, table))
-    };
-
-    public static Table Append(Stm stm, Table? table) => stm switch
-    {
-        CompoundStm cStm => Append(cStm.Stm2, Append(cStm.Stm1, table)),
-        AssignStm aStm => aStm.Exp.Evaluate(table) switch
-        {
-            (int val, Table newTable) => new Table(aStm.Id, val, newTable)
-        },
-        _ => table
+        EseqExp eExp => eExp.Exp.Evaluate(Table.Append(eExp.Stm, table))
     };
 }

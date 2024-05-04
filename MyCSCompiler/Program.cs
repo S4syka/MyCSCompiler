@@ -1,4 +1,5 @@
-﻿using StraightLineLanguage.Extensions;
+﻿using StraightLineLanguage;
+using StraightLineLanguage.Extensions;
 using StraightLineLanguage.LanguageTree;
 using StraightLineLanguage.LanguageTree.Enums;
 
@@ -13,4 +14,12 @@ Stm prog = new CompoundStm(
                                )
           );
 
-Console.WriteLine(prog.MaxArgs());
+
+var table = Table.Append(prog, Table.EmptyTable());
+
+foreach (var item in table)
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine(table);
